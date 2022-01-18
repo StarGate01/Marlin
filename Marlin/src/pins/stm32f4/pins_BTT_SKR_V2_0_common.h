@@ -448,8 +448,12 @@
 
 #elif HAS_WIRED_LCD
 
-  #define BEEPER_PIN                 EXP1_01_PIN
-  #define BTN_ENC                    EXP1_02_PIN
+  #if !ENABLED(ZONESTAR_LCD)
+
+    #define BEEPER_PIN               EXP1_01_PIN
+    #define BTN_ENC                  EXP1_02_PIN
+
+  #endif
 
   #if ENABLED(CR10_STOCKDISPLAY)
 
@@ -467,6 +471,22 @@
     #define DOGLCD_CS                EXP1_06_PIN
     #define BTN_EN1                  EXP2_03_PIN
     #define BTN_EN2                  EXP2_05_PIN
+
+  #elif ENABLED(ZONESTAR_LCD)
+
+    #define LCD_PINS_RS              EXP1_06_PIN
+    #define LCD_PINS_ENABLE          EXP1_04_PIN
+    #define LCD_PINS_D4              EXP1_07_PIN
+    #define LCD_PINS_D5              EXP1_05_PIN
+    #define LCD_PINS_D6              EXP1_03_PIN
+    #define LCD_PINS_D7              EXP1_01_PIN
+
+    #define ADC_KEYPAD_PIN           EXP1_02_PIN
+    #undef BTN_EN1
+    #undef BTN_EN2
+    #undef BTN_ENC
+
+    #define ADC_BUTTONS_R_PULLUP     3.2 // Compensation for LDO regulator
 
   #else
 
