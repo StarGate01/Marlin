@@ -476,6 +476,19 @@
     #define BTN_EN1                  EXP2_08_PIN
     #define BTN_EN2                  EXP2_06_PIN
 
+  #elif ENABLED(ZONESTAR_LCD)
+
+    #define LCD_PINS_RS              EXP1_06_PIN
+    #define LCD_PINS_ENABLE          EXP1_08_PIN
+    #define LCD_PINS_D4              EXP1_03_PIN
+    #define LCD_PINS_D5              EXP1_05_PIN
+    #define LCD_PINS_D6              EXP1_07_PIN
+    #define LCD_PINS_D7              EXP1_09_PIN
+
+    #define ADC_KEYPAD_PIN           EXP1_10_PIN
+    #define BTN_EN1                           -1
+    #define BTN_EN2                           -1
+
   #else
 
     #define LCD_PINS_RS              EXP1_07_PIN
