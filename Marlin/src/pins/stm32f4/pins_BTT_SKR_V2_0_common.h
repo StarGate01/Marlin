@@ -494,6 +494,8 @@
     #undef BTN_EN2
     #undef BTN_ENC
 
+    #define ADC_BUTTONS_R_PULLUP     3.2 // Compensation for LDO regulator
+
   #else
 
     #define LCD_PINS_RS              EXP1_07_PIN
