@@ -456,8 +456,12 @@
 
 #elif HAS_WIRED_LCD
 
-  #define BEEPER_PIN                 EXP1_10_PIN
-  #define BTN_ENC                    EXP1_09_PIN
+  #if !ENABLED(ZONESTAR_LCD)
+
+    #define BEEPER_PIN               EXP1_10_PIN
+    #define BTN_ENC                  EXP1_09_PIN
+
+  #endif
 
   #if ENABLED(CR10_STOCKDISPLAY)
 
@@ -478,16 +482,17 @@
 
   #elif ENABLED(ZONESTAR_LCD)
 
-    #define LCD_PINS_RS              EXP1_06_PIN
-    #define LCD_PINS_ENABLE          EXP1_08_PIN
-    #define LCD_PINS_D4              EXP1_03_PIN
-    #define LCD_PINS_D5              EXP1_05_PIN
-    #define LCD_PINS_D6              EXP1_07_PIN
-    #define LCD_PINS_D7              EXP1_09_PIN
+    #define LCD_PINS_RS              EXP1_05_PIN
+    #define LCD_PINS_ENABLE          EXP1_07_PIN
+    #define LCD_PINS_D4              EXP1_04_PIN
+    #define LCD_PINS_D5              EXP1_06_PIN
+    #define LCD_PINS_D6              EXP1_08_PIN
+    #define LCD_PINS_D7              EXP1_10_PIN
 
-    #define ADC_KEYPAD_PIN           EXP1_10_PIN
-    #define BTN_EN1                           -1
-    #define BTN_EN2                           -1
+    #define ADC_KEYPAD_PIN           EXP1_09_PIN
+    #undef BTN_EN1
+    #undef BTN_EN2
+    #undef BTN_ENC
 
   #else
 
