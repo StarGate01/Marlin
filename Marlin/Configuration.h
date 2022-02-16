@@ -596,7 +596,7 @@
   //#define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
                                   // Set/get with gcode: M301 E[extruder number, 0-2]
 
-  // ANET A8 Standard Extruder at 210 Degree Celsius and 100% Fan
+  // BIQU H2 at 210 Degree Celsius and 100% Fan
   // (measured after M106 S255 with M303 E0 S210 C8)
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify up to one value per hotend here, according to your setup.
@@ -605,9 +605,9 @@
     #define DEFAULT_Ki_LIST {   1.25,   1.25 }
     #define DEFAULT_Kd_LIST {  86.00,  86.00 }
   #else
-    #define DEFAULT_Kp 23.1424
-    #define DEFAULT_Ki 1.7016
-    #define DEFAULT_Kd 78.6842
+    #define DEFAULT_Kp 13.7849
+    #define DEFAULT_Ki 0.9846
+    #define DEFAULT_Kd 48.2473
   #endif
 #endif // PIDTEMP
 
@@ -933,7 +933,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 100 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 932 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1185,7 +1185,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -27, -40, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 55, -28, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
